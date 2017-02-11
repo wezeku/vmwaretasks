@@ -580,42 +580,6 @@ namespace Vestris.VMWareComLib
         }
         */
 
-        public bool IsRecording
-        {
-            get
-            {
-                return _vm.IsRecording;
-            }
-        }
-
-        public bool IsReplaying
-        {
-            get
-            {
-                return _vm.IsReplaying;
-            }
-        }
-
-        public IVMWareSnapshot BeginRecording(string name, string description)
-        {
-            return new VMWareSnapshot(_vm.BeginRecording(name, description));
-        }
-
-        public IVMWareSnapshot BeginRecording2(string name, string description, int timeoutInSeconds)
-        {
-            return new VMWareSnapshot(_vm.BeginRecording(name, description, timeoutInSeconds));
-        }
-
-        public void EndRecording()
-        {
-            _vm.EndRecording();
-        }
-
-        public void EndRecording2(int timeoutInSeconds)
-        {
-            _vm.EndRecording(timeoutInSeconds);
-        }
-
         public void UpgradeVirtualHardware()
         {
             _vm.UpgradeVirtualHardware();
